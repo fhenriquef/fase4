@@ -1,0 +1,29 @@
+<ion-content>
+  <div class="flex-center">
+    <form [formGroup]="form">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title color="primary"> Furme</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.required">É necessário inserir o e-mail</ion-label>
+          <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.email">Email é inválido</ion-label>
+
+          <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-label color="danger" *ngIf="form.get('password').touched && form.get('password').errors?.required">A senha é necessária</ion-label>
+
+          
+          <ion-button color="primary" size="full" [disabled]="!form.valid" (click)="login()">Login</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </div>
+</ion-content>

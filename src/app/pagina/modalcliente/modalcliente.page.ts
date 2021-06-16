@@ -13,18 +13,13 @@ export class ModalclientePage implements OnInit {
 atualizar = false;
 dados = {
   id: '',
-  codigo: '',
-  descricao: '',
-  tipo: '',
-  preco: '',
-  quantidade: '',
-  email: '',
-  senha: '',
   nome: '',
-  nome_gerente: '',
-  cnpj: '',
+  qualificacao: '',
+  rua: '',
+  numero: '',
+  bairro: '',
+  cidade: '',
   telefone: '',
-  endereco: '',
   localizacao: ''
 }
   constructor(

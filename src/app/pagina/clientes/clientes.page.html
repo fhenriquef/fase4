@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-button slot="end" (click)="novoCliente()">Novo Produtos</ion-button>
-    <ion-title>Produtos</ion-title>
+    <ion-button slot="end" (click)="novoCliente()">Novo Mecânico</ion-button>
+    <ion-title>Mecânicos Próximos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,8 +11,9 @@
   <ion-item-options>
       <ion-item-option color="danger" (click)="remover(c.id)">Deletar</ion-item-option>
       <ion-item-option color="warning" (click)="atualizar(c)">Atualizar</ion-item-option>
+      <ion-item-option color="success" (click)="visualizar(c)">Visualizar</ion-item-option>
     </ion-item-options>
-  <ion-item>{{c.codigo}}</ion-item>
+  <ion-item>{{c.nome}} - {{c.qualificacao}} - {{c.localizacao}} - {{c.telefone}}</ion-item>
 </ion-item-sliding>
 </ion-list>
 </ion-content>

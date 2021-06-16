@@ -1,29 +1,26 @@
 {
-  "pecas": [
+  "mecanicos": [
     {
-      "codigo": "funcionou",
-      "descricao": "funcionou2",
-      "tipo": "funcionou3",
-      "preco": "funcionou4",
-      "quantidade": "funcionou5",
+      "nome": "Maria",
+      "qualificacao": "hrthr",
+      "rua": "rhrthrt",
+      "numero": "trhrthr",
+      "bairro": "thrtht",
+      "cidade": "thtrhrth",
+      "telefone": "3534352175",
+      "localizacao": "1 km",
       "id": 3
     },
     {
-      "codigo": "sdfdfvsdv",
-      "descricao": "rfgrgbdf",
-      "tipo": "bhdrhbdfb",
-      "preco": "rhbrdhbd",
-      "quantidade": "dfhbdrhbdfhb",
+      "nome": "Fábio",
+      "qualificacao": "Cambio, motor",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "Extrema",
+      "telefone": "",
+      "localizacao": "",
       "id": 4
-    },
-    {
-      "codigo": "123456",
-      "descricao": "Fusível",
-      "tipo": "2",
-      "preco": "1.90",
-      "quantidade": "10",
-      "nome_gerente": "Center Norte",
-      "id": 5
     }
   ]
 }

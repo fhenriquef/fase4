@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { Cliente, clienteService } from 'src/app/servico/cliente.service';
 import { ModalclientePage } from '../modalcliente/modalcliente.page';
 
@@ -11,7 +11,9 @@ import { ModalclientePage } from '../modalcliente/modalcliente.page';
 export class ClientesPage implements OnInit {
 clientes: Cliente[];
   constructor(private service: clienteService,
-    private modalCtrl: ModalController) { }
+    private modalCtrl: ModalController,
+    private toastCtrl: ToastController
+    ) { }
 
   ngOnInit()
   {
@@ -37,7 +39,13 @@ novoCliente(){
   }).then(({data}) =>{
     this.service.getAll().subscribe(response => {
     this.clientes = response;
-    })
+    });
+      this.toastCtrl.create({
+        message: 'Mecânico cadastrado com sucesso',
+        duration: 2000
+      }).then(toast =>{
+        toast.present();
+      })
   })
 }
 
@@ -51,7 +59,30 @@ atualizar(c: Cliente){
   }).then(({data}) =>{
     this.service.getAll().subscribe(response =>{
       this.clientes = response;
+    });
+    this.toastCtrl.create({
+      message: 'Mecânico atualizado com sucesso',
+      duration: 2000
+    }).then(toast =>{
+      toast.present();
     })
+
+  })
+}
+
+
+visualizar(c: Cliente){
+  this.modalCtrl.create({
+    component: ModalclientePage,
+    componentProps: {c}
+  }).then(modal =>{
+    modal.present();
+    return modal.onDidDismiss();
+  }).then(({data}) =>{
+    this.service.getAll().subscribe(response =>{
+      this.clientes = response;
+    });
+
   })
 }
 

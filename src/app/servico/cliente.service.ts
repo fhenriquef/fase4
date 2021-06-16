@@ -4,25 +4,20 @@ import { Injectable } from '@angular/core';
 export interface Cliente
 {
   id: string;
-  codigo: string;
-  descricao: string;
-  tipo: string;
-  preco: string;
-  quantidade: string;
-  email: string;
-  senha: string;
   nome: string;
-  nome_gerente: string;
-  cnpj: string;
+  qualificacao: string;
+  rua: string;
+  numero: string;
+  bairro: string;
+  cidade: string;
   telefone: string;
-  endereco: string;
-  localizacao: string; 
+  localizacao: string;
 }
 @Injectable({
   providedIn: 'root'
 })
 export class clienteService {
-private url = 'http://localhost:3000/pecas';
+private url = 'http://localhost:3000/mecanicos';
 
   constructor(private http: HttpClient) { }
   getAll()
