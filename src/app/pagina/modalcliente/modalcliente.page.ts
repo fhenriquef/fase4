@@ -9,8 +9,9 @@ import { clienteService, Cliente } from 'src/app/servico/cliente.service';
   styleUrls: ['./modalcliente.page.scss'],
 })
 export class ModalclientePage implements OnInit {
-@Input() c: Cliente;
-atualizar = false;
+@Input() cliente: Cliente;
+@Input() atualizar: boolean;
+visualizar = false;
 dados = {
   id: '',
   nome: '',
@@ -28,9 +29,11 @@ dados = {
   ) { }
 
   ngOnInit() {
-    if(this.c){
-      this.atualizar = true;
-      this.dados = this.c;
+    if(this.cliente){
+      if (this.atualizar == false){
+          this.visualizar = true;
+      }
+      this.dados = this.cliente;
     }
   }
 fecharModal(){
@@ -40,7 +43,7 @@ fecharModal(){
 enviando(form: NgForm){
   const cliente = form.value;
   if(this.atualizar){
-    this.service.update(cliente, this.c.id).subscribe(Response =>{
+    this.service.update(cliente, this.cliente.id).subscribe(Response =>{
       this.modalCtrl.dismiss(Response);
     })
   }else{

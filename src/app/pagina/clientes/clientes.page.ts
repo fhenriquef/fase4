@@ -52,7 +52,7 @@ novoCliente(){
 atualizar(c: Cliente){
   this.modalCtrl.create({
     component: ModalclientePage,
-    componentProps: {c}
+    componentProps: {cliente: c, atualizar: true}
   }).then(modal =>{
     modal.present();
     return modal.onDidDismiss();
@@ -74,7 +74,7 @@ atualizar(c: Cliente){
 visualizar(c: Cliente){
   this.modalCtrl.create({
     component: ModalclientePage,
-    componentProps: {c}
+    componentProps: {cliente: c, atualizar: false}
   }).then(modal =>{
     modal.present();
     return modal.onDidDismiss();
